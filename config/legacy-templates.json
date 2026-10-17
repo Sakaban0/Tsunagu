@@ -1,0 +1,374 @@
+[
+  {
+    "id": "ask-again",
+    "prompt": "先ほどの回答について、{{reason}}と感じています。具体的には：{{detail}}。説明を見直してください。PC操作の場合は専門用語を短く説明し、一度に1〜2操作ずつ、クリック位置と操作後の状態を具体的に示し、現在の画面を確認してください。 必要な情報が不足している場合は確認の質問をしてください。未回答の項目は推測で埋めないでください。",
+    "schemaVersion": 1,
+    "name": "AIの説明を聞き直す",
+    "questions": [
+      {
+        "label": "どこを直してほしいですか？",
+        "required": true,
+        "type": "singleSelect",
+        "id": "reason",
+        "options": [
+          {
+            "value": "説明が難しい",
+            "label": "説明が難しい"
+          },
+          {
+            "value": "画面が違う",
+            "label": "画面が違う"
+          },
+          {
+            "value": "操作できない",
+            "label": "操作できない"
+          },
+          {
+            "value": "意図と違う",
+            "label": "意図と違う"
+          },
+          {
+            "value": "unknown",
+            "label": "分からない"
+          }
+        ]
+      },
+      {
+        "label": "どの部分ですか？",
+        "required": true,
+        "type": "textarea",
+        "id": "detail"
+      }
+    ],
+    "category": "AIの回答を聞き直す",
+    "origin": "bundled",
+    "description": "回答をもらった既存会話で使うことをおすすめします"
+  },
+  {
+    "id": "ideas",
+    "prompt": "{{topic}}のアイデアを{{count}}個考えてください。条件：{{constraints}}。方向性：{{direction}}。各候補の良い点と注意点を添えてください。 必要な情報が不足している場合は確認の質問をしてください。未回答の項目は推測で埋めないでください。",
+    "schemaVersion": 1,
+    "name": "アイデアを出す",
+    "questions": [
+      {
+        "label": "何のアイデアですか？",
+        "required": true,
+        "type": "text",
+        "id": "topic"
+      },
+      {
+        "label": "守りたい条件は？",
+        "type": "textarea",
+        "id": "constraints"
+      },
+      {
+        "max": 30,
+        "label": "候補をいくつ出しますか？",
+        "required": true,
+        "id": "count",
+        "min": 1,
+        "type": "number",
+        "default": 5
+      },
+      {
+        "label": "重視したい方向性は？",
+        "type": "multiSelect",
+        "id": "direction",
+        "options": [
+          {
+            "value": "実現しやすい",
+            "label": "実現しやすい"
+          },
+          {
+            "value": "独創的",
+            "label": "独創的"
+          },
+          {
+            "value": "費用を抑える",
+            "label": "費用を抑える"
+          },
+          {
+            "value": "unknown",
+            "label": "分からない"
+          }
+        ]
+      }
+    ],
+    "category": "アイデア出し",
+    "origin": "bundled",
+    "description": "条件をもとに、複数の候補を考えます"
+  },
+  {
+    "id": "organize",
+    "prompt": "目的：{{goal}}。現在の状況：{{state}}。試したこと：{{tried}}。希望する回答形式：{{format}}。これらを踏まえて解決を手伝ってください。 必要な情報が不足している場合は確認の質問をしてください。未回答の項目は推測で埋めないでください。",
+    "schemaVersion": 1,
+    "name": "質問を整理する",
+    "questions": [
+      {
+        "label": "何を達成したいですか？",
+        "required": true,
+        "type": "text",
+        "id": "goal"
+      },
+      {
+        "label": "現在の状況は？",
+        "required": true,
+        "type": "textarea",
+        "id": "state"
+      },
+      {
+        "label": "試したことはありますか？",
+        "type": "textarea",
+        "id": "tried"
+      },
+      {
+        "label": "どんな回答が欲しいですか？",
+        "type": "multiSelect",
+        "id": "format",
+        "options": [
+          {
+            "value": "手順",
+            "label": "手順"
+          },
+          {
+            "value": "具体例",
+            "label": "具体例"
+          },
+          {
+            "value": "比較表",
+            "label": "比較表"
+          },
+          {
+            "value": "unknown",
+            "label": "分からない"
+          }
+        ]
+      }
+    ],
+    "category": "AIへの質問整理",
+    "origin": "bundled",
+    "description": "目的と状況をまとめて、伝わる質問を作ります"
+  },
+  {
+    "id": "pc-help",
+    "prompt": "Windowsの操作を手伝ってください。目的：{{task}}。困っている点：{{issue}}。画面の状況：{{details}}。一度に1〜2操作ずつ、クリックする位置やアイコン、操作後の画面の状態を具体的に示してください。専門用語は短く説明し、画面の状態を確認してください。 必要な情報が不足している場合は確認の質問をしてください。未回答の項目は推測で埋めないでください。",
+    "schemaVersion": 1,
+    "name": "パソコンの操作を教えて",
+    "questions": [
+      {
+        "maxLength": 4000,
+        "label": "何をしたいですか？",
+        "required": true,
+        "id": "task",
+        "placeholder": "ダウンロードしたファイルを開きたい",
+        "type": "textarea"
+      },
+      {
+        "label": "どこで困っていますか？",
+        "required": true,
+        "type": "singleSelect",
+        "id": "issue",
+        "options": [
+          {
+            "value": "場所が分からない",
+            "label": "どこにあるか分からない"
+          },
+          {
+            "value": "操作が分からない",
+            "label": "操作が分からない"
+          },
+          {
+            "value": "unknown",
+            "label": "分からない"
+          }
+        ]
+      },
+      {
+        "label": "画面に何が表示されていますか？",
+        "type": "textarea",
+        "id": "details",
+        "visibleWhen": {
+          "questionId": "issue",
+          "operator": "equals",
+          "value": "場所が分からない"
+        }
+      }
+    ],
+    "category": "PC操作",
+    "origin": "bundled",
+    "description": "クリックする場所から、一度に少しずつ案内してもらいます"
+  },
+  {
+    "id": "pc-terms",
+    "prompt": "Windowsの用語「{{term}}」を初心者向けに短く説明してください。表示された場所：{{context}}。実際のクリック位置とアイコン、結果を一度に1〜2操作ずつ案内し、画面の状態を確認してください。 必要な情報が不足している場合は確認の質問をしてください。未回答の項目は推測で埋めないでください。",
+    "schemaVersion": 1,
+    "name": "パソコンの用語を知りたい",
+    "questions": [
+      {
+        "label": "知りたい用語は？",
+        "required": true,
+        "type": "text",
+        "id": "term"
+      },
+      {
+        "label": "どこに表示されましたか？",
+        "type": "textarea",
+        "id": "context"
+      }
+    ],
+    "category": "PC操作",
+    "origin": "bundled",
+    "description": "用語の意味と、実際の操作を確認します"
+  },
+  {
+    "id": "study",
+    "prompt": "{{topic}}について教えてください。理解度：{{level}}。学ぶ目的：{{goal}}。説明の詳しさは5段階の{{depth}}。具体例と短い確認問題を含め、不確かな情報は不確かと明示してください。 必要な情報が不足している場合は確認の質問をしてください。未回答の項目は推測で埋めないでください。",
+    "schemaVersion": 1,
+    "name": "わかりやすく学ぶ",
+    "questions": [
+      {
+        "label": "何を学びたいですか？",
+        "required": true,
+        "type": "text",
+        "id": "topic"
+      },
+      {
+        "label": "今の理解度は？",
+        "default": "初めて",
+        "type": "singleSelect",
+        "id": "level",
+        "options": [
+          {
+            "value": "初めて",
+            "label": "初めて"
+          },
+          {
+            "value": "少し知っている",
+            "label": "少し知っている"
+          },
+          {
+            "value": "unknown",
+            "label": "分からない"
+          }
+        ]
+      },
+      {
+        "label": "学ぶ目的は？",
+        "type": "text",
+        "id": "goal"
+      },
+      {
+        "max": 5,
+        "type": "slider",
+        "id": "depth",
+        "step": 1,
+        "required": true,
+        "min": 1,
+        "helpText": "矢印キーでも変更できます。",
+        "default": 3,
+        "label": "説明の詳しさは？（1：短く、5：詳しく）"
+      }
+    ],
+    "category": "勉強・調べもの",
+    "origin": "bundled",
+    "description": "理解度に合わせて説明してもらいます"
+  },
+  {
+    "id": "summary",
+    "prompt": "次の文章を{{reader}}向けに約{{length}}文字、{{bullet}}で要約してください。元の文章にない事実は追加しないでください。文章：\\n{{source}} 必要な情報が不足している場合は確認の質問をしてください。未回答の項目は推測で埋めないでください。",
+    "schemaVersion": 1,
+    "name": "文章を要約する",
+    "questions": [
+      {
+        "label": "要約したい文章を入力してください",
+        "required": true,
+        "maxLength": 30000,
+        "type": "textarea",
+        "id": "source"
+      },
+      {
+        "max": 3000,
+        "label": "何文字くらいにしますか？",
+        "required": true,
+        "id": "length",
+        "min": 50,
+        "type": "number",
+        "default": 300
+      },
+      {
+        "label": "箇条書きにしますか？",
+        "default": "箇条書き",
+        "type": "singleSelect",
+        "id": "bullet",
+        "options": [
+          {
+            "value": "箇条書き",
+            "label": "はい"
+          },
+          {
+            "value": "段落",
+            "label": "いいえ"
+          }
+        ]
+      },
+      {
+        "label": "誰が読みますか？",
+        "default": "初心者",
+        "type": "text",
+        "id": "reader"
+      }
+    ],
+    "category": "要約",
+    "origin": "bundled",
+    "description": "読み手に合わせて、要点を短くまとめます"
+  },
+  {
+    "id": "writing",
+    "prompt": "{{recipient}}に向けて、目的「{{purpose}}」の文章を{{tone}}な口調で作成してください。伝える内容：{{message}}。 必要な情報が不足している場合は確認の質問をしてください。未回答の項目は推測で埋めないでください。",
+    "schemaVersion": 1,
+    "name": "メール・文章を作る",
+    "questions": [
+      {
+        "label": "誰に伝えますか？",
+        "required": true,
+        "type": "text",
+        "id": "recipient"
+      },
+      {
+        "label": "目的は？",
+        "required": true,
+        "type": "text",
+        "id": "purpose"
+      },
+      {
+        "label": "口調を選んでください",
+        "default": "丁寧",
+        "type": "singleSelect",
+        "id": "tone",
+        "options": [
+          {
+            "value": "丁寧",
+            "label": "丁寧"
+          },
+          {
+            "value": "親しみやすい",
+            "label": "親しみやすい"
+          },
+          {
+            "value": "unknown",
+            "label": "分からない"
+          }
+        ]
+      },
+      {
+        "label": "伝えたい内容は？",
+        "required": true,
+        "type": "textarea",
+        "id": "message"
+      }
+    ],
+    "category": "文章作成",
+    "origin": "bundled",
+    "description": "相手に合う口調で伝えたい内容を文章にします"
+  }
+]

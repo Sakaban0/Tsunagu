@@ -1,0 +1,95 @@
+{
+  "id": "organize",
+  "questions": [
+    {
+      "type": "singleSelect",
+      "id": "goal",
+      "required": true,
+      "label": "AIに何を手伝ってほしいですか？",
+      "options": [
+        {
+          "label": "分からないことを教えてほしい",
+          "value": "分からないことを教えてほしい"
+        },
+        {
+          "label": "やりたいことの手順を知りたい",
+          "value": "やりたいことの手順を知りたい"
+        },
+        {
+          "label": "文章を整えてほしい",
+          "value": "文章を整えてほしい"
+        },
+        {
+          "label": "選択肢を比べてほしい",
+          "value": "選択肢を比べてほしい"
+        },
+        {
+          "label": "考えを整理したい",
+          "value": "考えを整理したい"
+        }
+      ]
+    },
+    {
+      "type": "singleSelect",
+      "id": "state",
+      "required": true,
+      "label": "今の状況に近いものは？",
+      "options": [
+        {
+          "label": "まだ何も試していない",
+          "value": "まだ何も試していない"
+        },
+        {
+          "label": "少し試したが止まっている",
+          "value": "少し試したが止まっている"
+        },
+        {
+          "label": "情報が多く整理できない",
+          "value": "情報が多く整理できない"
+        },
+        {
+          "label": "どこが分からないか分からない",
+          "value": "どこが分からないか分からない"
+        }
+      ]
+    },
+    {
+      "type": "multiSelect",
+      "id": "format",
+      "required": true,
+      "label": "どんな形の回答が助かりますか？",
+      "options": [
+        {
+          "label": "順番のある手順",
+          "value": "順番のある手順"
+        },
+        {
+          "label": "具体例",
+          "value": "具体例"
+        },
+        {
+          "label": "短い箇条書き",
+          "value": "短い箇条書き"
+        },
+        {
+          "label": "比較できる表",
+          "value": "比較できる表"
+        }
+      ]
+    },
+    {
+      "placeholder": "例：今の画面の様子、伝えたい言葉、気になっていることなど。空欄でも大丈夫です。",
+      "type": "textarea",
+      "id": "extra",
+      "maxLength": 6000,
+      "label": "ほかに伝えたいことはありますか？",
+      "required": false
+    }
+  ],
+  "description": "伝えたいことが曖昧でも、選びながら整理。",
+  "category": "AIへの質問整理",
+  "origin": "bundled",
+  "prompt": "相談の質問と回答を踏まえて支援してください。スキップや「わからない」がある場合は、答えられる範囲から説明し、進めるために不可欠な点だけ短く確認してください。相談内容を整理してから、役に立つ回答をしてください。",
+  "name": "AIへの質問を整理する",
+  "schemaVersion": 1
+}

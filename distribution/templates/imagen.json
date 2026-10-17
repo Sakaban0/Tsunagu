@@ -1,0 +1,176 @@
+
+{
+  "schemaVersion": 1,
+  "id": "custom-image-generation-1a76d1cb",
+  "name": "画像を作る（種類別）",
+  "description": "画像の種類に応じた質問と、背景・色数などの指定から希望の画像を生成します。",
+  "category": "画像生成",
+  "origin": "user",
+  "useAnswerStyle": false,
+  "questions": [
+    {
+      "id": "image-kind",
+      "label": "どんな画像を作りたいですか？",
+      "type": "singleSelect",
+      "required": false,
+      "options": [
+        {"value": "イラスト", "label": "イラスト"},
+        {"value": "写真のような画像", "label": "写真のような画像"},
+        {"value": "ピクトグラム・マーク", "label": "ピクトグラム・マーク"},
+        {"value": "ロゴ・アイコン", "label": "ロゴ・アイコン"},
+        {"value": "ポスター・バナー", "label": "ポスター・バナー"}
+      ]
+    },
+    {
+      "id": "illustration-style",
+      "label": "どんな描き方がいいですか？",
+      "type": "singleSelect",
+      "required": false,
+      "options": [
+        {"value": "アニメ風", "label": "アニメ風"},
+        {"value": "水彩風", "label": "水彩風"},
+        {"value": "絵本風", "label": "絵本風"},
+        {"value": "手描き風", "label": "手描き風"},
+        {"value": "立体的な絵", "label": "立体的な絵"}
+      ],
+      "visibleWhen": {
+        "questionId": "image-kind",
+        "operator": "equals",
+        "value": "イラスト"
+      }
+    },
+    {
+      "id": "photo-style",
+      "label": "どんな写真の雰囲気がいいですか？",
+      "type": "singleSelect",
+      "required": false,
+      "options": [
+        {"value": "自然光", "label": "自然光"},
+        {"value": "スタジオ撮影", "label": "スタジオ撮影"},
+        {"value": "映画のような光", "label": "映画のような光"},
+        {"value": "接写", "label": "接写"},
+        {"value": "昔の写真風", "label": "昔の写真風"}
+      ],
+      "visibleWhen": {
+        "questionId": "image-kind",
+        "operator": "equals",
+        "value": "写真のような画像"
+      }
+    },
+    {
+      "id": "pictogram-style",
+      "label": "マークの形はどれがいいですか？",
+      "type": "singleSelect",
+      "required": false,
+      "options": [
+        {"value": "線だけのマーク", "label": "線だけのマーク"},
+        {"value": "塗りつぶし", "label": "塗りつぶし"},
+        {"value": "丸みのある形", "label": "丸みのある形"},
+        {"value": "標識のような形", "label": "標識のような形"},
+        {"value": "シンプルなマーク", "label": "シンプルなマーク"}
+      ],
+      "visibleWhen": {
+        "questionId": "image-kind",
+        "operator": "equals",
+        "value": "ピクトグラム・マーク"
+      }
+    },
+    {
+      "id": "logo-style",
+      "label": "ロゴの形はどれがいいですか？",
+      "type": "singleSelect",
+      "required": false,
+      "options": [
+        {"value": "シンボル中心", "label": "シンボル中心"},
+        {"value": "文字中心", "label": "文字中心"},
+        {"value": "文字とマーク", "label": "文字とマーク"},
+        {"value": "丸いエンブレム", "label": "丸いエンブレム"},
+        {"value": "キャラクター入り", "label": "キャラクター入り"}
+      ],
+      "visibleWhen": {
+        "questionId": "image-kind",
+        "operator": "equals",
+        "value": "ロゴ・アイコン"
+      }
+    },
+    {
+      "id": "poster-purpose",
+      "label": "何に使う画像ですか？",
+      "type": "singleSelect",
+      "required": false,
+      "options": [
+        {"value": "イベント告知", "label": "イベント告知"},
+        {"value": "お店の宣伝", "label": "お店の宣伝"},
+        {"value": "SNSへの投稿", "label": "SNSへの投稿"},
+        {"value": "お知らせ", "label": "お知らせ"},
+        {"value": "飾るため", "label": "飾るため"}
+      ],
+      "visibleWhen": {
+        "questionId": "image-kind",
+        "operator": "equals",
+        "value": "ポスター・バナー"
+      }
+    },
+    {
+      "id": "image-mood",
+      "label": "どんな雰囲気にしたいですか？",
+      "type": "multiSelect",
+      "required": false,
+      "options": [
+        {"value": "シンプル", "label": "シンプル"},
+        {"value": "かわいい", "label": "かわいい"},
+        {"value": "かっこいい", "label": "かっこいい"},
+        {"value": "落ち着いた", "label": "落ち着いた"},
+        {"value": "カラフル", "label": "カラフル"}
+      ],
+      "helpText": "複数選べます"
+    },
+    {
+      "id": "image-shape",
+      "label": "画像の形はどれがいいですか？",
+      "type": "singleSelect",
+      "required": false,
+      "options": [
+        {"value": "正方形", "label": "正方形"},
+        {"value": "横長", "label": "横長"},
+        {"value": "縦長", "label": "縦長"},
+        {"value": "丸い枠に収まる形", "label": "丸い枠に収まる形"}
+      ]
+    },
+    {
+      "id": "image-background",
+      "label": "背景はどうしますか？",
+      "type": "singleSelect",
+      "required": false,
+      "options": [
+        {"value": "白", "label": "白"},
+        {"value": "単色", "label": "単色"},
+        {"value": "風景", "label": "風景"},
+        {"value": "模様や柄", "label": "模様や柄"},
+        {"value": "透過", "label": "透過"}
+      ]
+    },
+    {
+      "id": "image-colors",
+      "label": "色は何色くらい使いますか？",
+      "type": "singleSelect",
+      "required": false,
+      "options": [
+        {"value": "1色", "label": "1色"},
+        {"value": "2色", "label": "2色"},
+        {"value": "3色", "label": "3色"},
+        {"value": "4色以上", "label": "4色以上"},
+        {"value": "おまかせ", "label": "おまかせ"}
+      ]
+    },
+    {
+      "id": "extra-notes",
+      "label": "描きたいものや希望を書いてください",
+      "type": "textarea",
+      "required": false,
+      "maxLength": 6000,
+      "placeholder": "例：猫が本を読む絵、非常口のピクトグラム、青と白、背景は透明、文字は「秋祭り」。空欄でも大丈夫です。"
+    }
+  ],
+  "prompt": "上記の質問と回答を踏まえて、希望に合わせた画像を生成してください。選ばれた画像の種類に応じた描き方や用途、雰囲気、画像の形、背景、色数、自由入力の希望を反映してください。背景が「白」の場合は白背景、「単色」の場合は指定色または用途に合う単色、「風景」の場合は主題に合う風景、「模様や柄」の場合は主題を引き立てる模様、「透過」の場合は透明背景にしてください。色数は背景色を除いた主な絵柄や文字の色数として扱い、「おまかせ」または未指定の場合は用途に合わせて調整してください。ピクトグラム・マークは小さくても意味が伝わる明快な形にし、ロゴ・アイコンは縮小しても識別しやすくしてください。ポスター・バナーは指定された用途に合う構図と読みやすい文字配置にしてください。文字の指定がある場合はその内容を正確に入れてください。未指定の要素は自然に補い、実行に不可欠な情報がある場合だけ短く確認してください。"
+}

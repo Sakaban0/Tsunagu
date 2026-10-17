@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk"><PropertyGroup><OutputType>WinExe</OutputType><TargetFramework>net10.0-windows</TargetFramework><UseWPF>true</UseWPF><ImplicitUsings>enable</ImplicitUsings><Nullable>enable</Nullable><AssemblyName>TsunaguChat</AssemblyName><RootNamespace>AiPromptHelper</RootNamespace><Product>TsunaguChat</Product><Version>1.6.0</Version><Description>考えを整理して、AIに伝わる言葉へ。</Description><ApplicationIcon>Assets/TsunaguChat.ico</ApplicationIcon><ApplicationManifest>app.manifest</ApplicationManifest></PropertyGroup><ItemGroup><ProjectReference Include="../AiPromptHelper.Core/AiPromptHelper.Core.csproj"/><EmbeddedResource Include="../../templates/*.json" LogicalName="Templates.%(Filename)%(Extension)"/><Resource Include="Assets/TsunaguChat.ico"/><EmbeddedResource Include="../../config/legacy-templates.json" LogicalName="LegacyTemplates.json"/></ItemGroup></Project>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

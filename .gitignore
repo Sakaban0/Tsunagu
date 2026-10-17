@@ -1,0 +1,25 @@
+**/bin/
+**/obj/
+artifacts/
+.vs/
+.idea/
+*.user
+*.suo
+**/data/
+.env
+.env.*
+!.env.example
+*.pfx
+*.p12
+*.key
+*.log
+*.tmp
+*.unicode.bak
+README.txt
+Codex_実装仕様書*.md
+# Public documentation allowlist
+/docs/*
+!/docs/TEMPLATE-GENERATION-PROMPT.md
+!/docs/USER-GUIDE.md
+**/ChatGptIntegration/
+scripts/update-bundled-templates.ps1

@@ -1,0 +1,75 @@
+{
+  "id": "summary",
+  "questions": [
+    {
+      "placeholder": "ここに文章を貼り付けてください。",
+      "type": "textarea",
+      "id": "source",
+      "maxLength": 30000,
+      "label": "要約したい文章を貼り付けてください",
+      "required": true
+    },
+    {
+      "type": "singleSelect",
+      "id": "reader",
+      "required": true,
+      "label": "誰が読むための要約ですか？",
+      "options": [
+        {
+          "label": "自分の理解のため",
+          "value": "自分の理解のため"
+        },
+        {
+          "label": "初めて読む人",
+          "value": "初めて読む人"
+        },
+        {
+          "label": "仕事の関係者",
+          "value": "仕事の関係者"
+        },
+        {
+          "label": "家族・友人",
+          "value": "家族・友人"
+        }
+      ]
+    },
+    {
+      "type": "multiSelect",
+      "id": "focus",
+      "required": true,
+      "label": "どの部分を重視しますか？",
+      "options": [
+        {
+          "label": "全体の要点",
+          "value": "全体の要点"
+        },
+        {
+          "label": "結論と理由",
+          "value": "結論と理由"
+        },
+        {
+          "label": "やるべきこと",
+          "value": "やるべきこと"
+        },
+        {
+          "label": "重要な数字・日付",
+          "value": "重要な数字・日付"
+        }
+      ]
+    },
+    {
+      "placeholder": "例：今の画面の様子、伝えたい言葉、気になっていることなど。空欄でも大丈夫です。",
+      "type": "textarea",
+      "id": "extra",
+      "maxLength": 6000,
+      "label": "ほかに伝えたいことはありますか？",
+      "required": false
+    }
+  ],
+  "description": "長い文章から、知りたい要点を取り出す。",
+  "category": "要約",
+  "origin": "bundled",
+  "prompt": "相談の質問と回答を踏まえて支援してください。スキップや「わからない」がある場合は、答えられる範囲から説明し、進めるために不可欠な点だけ短く確認してください。提示された文章だけを根拠に要約してください。元の文章にない事実は追加しないでください。原文がスキップの場合は原文の提示を案内してください。",
+  "name": "文章を要約する",
+  "schemaVersion": 1
+}

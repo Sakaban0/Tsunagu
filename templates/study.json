@@ -1,0 +1,95 @@
+{
+  "id": "study",
+  "questions": [
+    {
+      "type": "singleSelect",
+      "id": "topic",
+      "required": true,
+      "label": "どの分野を学びたいですか？",
+      "options": [
+        {
+          "label": "パソコン・AI",
+          "value": "パソコン・AI"
+        },
+        {
+          "label": "仕事に役立つ知識",
+          "value": "仕事に役立つ知識"
+        },
+        {
+          "label": "暮らしの知識",
+          "value": "暮らしの知識"
+        },
+        {
+          "label": "学校で学ぶ内容",
+          "value": "学校で学ぶ内容"
+        },
+        {
+          "label": "その他の分野",
+          "value": "その他の分野"
+        }
+      ]
+    },
+    {
+      "type": "singleSelect",
+      "id": "level",
+      "required": true,
+      "label": "今の理解に近いものは？",
+      "options": [
+        {
+          "label": "初めて触れる",
+          "value": "初めて触れる"
+        },
+        {
+          "label": "言葉は聞いたことがある",
+          "value": "言葉は聞いたことがある"
+        },
+        {
+          "label": "少し知っているが自信がない",
+          "value": "少し知っているが自信がない"
+        },
+        {
+          "label": "基礎の次を学びたい",
+          "value": "基礎の次を学びたい"
+        }
+      ]
+    },
+    {
+      "type": "singleSelect",
+      "id": "goal",
+      "required": true,
+      "label": "どんな学び方がよいですか？",
+      "options": [
+        {
+          "label": "身近な例で理解したい",
+          "value": "身近な例で理解したい"
+        },
+        {
+          "label": "仕組みを知りたい",
+          "value": "仕組みを知りたい"
+        },
+        {
+          "label": "問題を解いてみたい",
+          "value": "問題を解いてみたい"
+        },
+        {
+          "label": "実際に試したい",
+          "value": "実際に試したい"
+        }
+      ]
+    },
+    {
+      "placeholder": "例：今の画面の様子、伝えたい言葉、気になっていることなど。空欄でも大丈夫です。",
+      "type": "textarea",
+      "id": "extra",
+      "maxLength": 6000,
+      "label": "ほかに伝えたいことはありますか？",
+      "required": false
+    }
+  ],
+  "description": "知りたい分野を、今の理解に合わせて。",
+  "category": "勉強・調べもの",
+  "origin": "bundled",
+  "prompt": "相談の質問と回答を踏まえて支援してください。スキップや「わからない」がある場合は、答えられる範囲から説明し、進めるために不可欠な点だけ短く確認してください。理解度に合わせて学習を手伝ってください。事実と推測を区別し、テーマが広い場合は身近な入口を示してください。",
+  "name": "わかりやすく学ぶ",
+  "schemaVersion": 1
+}

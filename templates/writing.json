@@ -1,0 +1,95 @@
+{
+  "id": "writing",
+  "questions": [
+    {
+      "type": "singleSelect",
+      "id": "recipient",
+      "required": true,
+      "label": "誰に向けた文章ですか？",
+      "options": [
+        {
+          "label": "仕事の相手・上司",
+          "value": "仕事の相手・上司"
+        },
+        {
+          "label": "家族・友人",
+          "value": "家族・友人"
+        },
+        {
+          "label": "お店・窓口",
+          "value": "お店・窓口"
+        },
+        {
+          "label": "不特定の読者",
+          "value": "不特定の読者"
+        }
+      ]
+    },
+    {
+      "type": "singleSelect",
+      "id": "purpose",
+      "required": true,
+      "label": "何を伝えたいですか？",
+      "options": [
+        {
+          "label": "お願い・問い合わせ",
+          "value": "お願い・問い合わせ"
+        },
+        {
+          "label": "お礼・あいさつ",
+          "value": "お礼・あいさつ"
+        },
+        {
+          "label": "お知らせ・報告",
+          "value": "お知らせ・報告"
+        },
+        {
+          "label": "お断り・おわび",
+          "value": "お断り・おわび"
+        },
+        {
+          "label": "自分の考え",
+          "value": "自分の考え"
+        }
+      ]
+    },
+    {
+      "type": "singleSelect",
+      "id": "format",
+      "required": true,
+      "label": "どんな文章にしますか？",
+      "options": [
+        {
+          "label": "メール",
+          "value": "メール"
+        },
+        {
+          "label": "短いメッセージ",
+          "value": "短いメッセージ"
+        },
+        {
+          "label": "案内文",
+          "value": "案内文"
+        },
+        {
+          "label": "SNSの投稿",
+          "value": "SNSの投稿"
+        }
+      ]
+    },
+    {
+      "placeholder": "例：今の画面の様子、伝えたい言葉、気になっていることなど。空欄でも大丈夫です。",
+      "type": "textarea",
+      "id": "extra",
+      "maxLength": 6000,
+      "label": "ほかに伝えたいことはありますか？",
+      "required": false
+    }
+  ],
+  "description": "相手と目的を選んで、伝わる文章に。",
+  "category": "文章作成",
+  "origin": "bundled",
+  "prompt": "相談の質問と回答を踏まえて支援してください。スキップや「わからない」がある場合は、答えられる範囲から説明し、進めるために不可欠な点だけ短く確認してください。選んだ相手・目的に合う文章案を作成してください。未指定の人名・日時・金額は創作せず、必要なら差し替え欄で示してください。",
+  "name": "メール・文章を作る",
+  "schemaVersion": 1
+}

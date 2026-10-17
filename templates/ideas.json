@@ -1,0 +1,91 @@
+{
+  "id": "ideas",
+  "questions": [
+    {
+      "type": "singleSelect",
+      "id": "topic",
+      "required": true,
+      "label": "何のアイデアを考えますか？",
+      "options": [
+        {
+          "label": "仕事・活動の企画",
+          "value": "仕事・活動の企画"
+        },
+        {
+          "label": "趣味・休日の過ごし方",
+          "value": "趣味・休日の過ごし方"
+        },
+        {
+          "label": "名前・タイトル",
+          "value": "名前・タイトル"
+        },
+        {
+          "label": "暮らしの工夫",
+          "value": "暮らしの工夫"
+        },
+        {
+          "label": "その他",
+          "value": "その他"
+        }
+      ]
+    },
+    {
+      "type": "multiSelect",
+      "id": "direction",
+      "required": true,
+      "label": "重視したいことは？",
+      "options": [
+        {
+          "label": "すぐ試せる",
+          "value": "すぐ試せる"
+        },
+        {
+          "label": "費用を抑える",
+          "value": "費用を抑える"
+        },
+        {
+          "label": "新しさ・面白さ",
+          "value": "新しさ・面白さ"
+        },
+        {
+          "label": "続けやすさ",
+          "value": "続けやすさ"
+        }
+      ]
+    },
+    {
+      "type": "singleSelect",
+      "id": "count",
+      "required": true,
+      "label": "候補はいくつ欲しいですか？",
+      "options": [
+        {
+          "label": "3個",
+          "value": "3個"
+        },
+        {
+          "label": "5個",
+          "value": "5個"
+        },
+        {
+          "label": "10個",
+          "value": "10個"
+        }
+      ]
+    },
+    {
+      "placeholder": "例：今の画面の様子、伝えたい言葉、気になっていることなど。空欄でも大丈夫です。",
+      "type": "textarea",
+      "id": "extra",
+      "maxLength": 6000,
+      "label": "ほかに伝えたいことはありますか？",
+      "required": false
+    }
+  ],
+  "description": "方向性と条件から、試せそうな候補を考える。",
+  "category": "アイデア出し",
+  "origin": "bundled",
+  "prompt": "相談の質問と回答を踏まえて支援してください。スキップや「わからない」がある場合は、答えられる範囲から説明し、進めるために不可欠な点だけ短く確認してください。条件に合うアイデアを、選んだ候補数だけ提案してください。それぞれの良い点と試す最初の一歩を添えてください。",
+  "name": "アイデアを出す",
+  "schemaVersion": 1
+}

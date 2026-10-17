@@ -1,0 +1,85 @@
+
+{
+  "schemaVersion": 1,
+  "id": "custom-document-creation-6f0faae3",
+  "name": "資料作成",
+  "description": "WordやPowerPointなどの資料を、参考画像や希望に合わせて作成します。",
+  "category": "文書・資料作成",
+  "origin": "user",
+  "useAnswerStyle": false,
+  "questions": [
+    {
+      "id": "purpose",
+      "label": "どんな資料を作りますか？",
+      "type": "singleSelect",
+      "required": false,
+      "options": [
+        {
+          "value": "仕事の資料",
+          "label": "仕事の資料"
+        },
+        {
+          "value": "学校・学習の資料",
+          "label": "学校・学習の資料"
+        },
+        {
+          "value": "案内・配布資料",
+          "label": "案内・配布資料"
+        },
+        {
+          "value": "個人用の資料",
+          "label": "個人用の資料"
+        },
+        {
+          "value": "その他の資料",
+          "label": "その他の資料"
+        }
+      ]
+    },
+    {
+      "id": "format",
+      "label": "希望するファイル形式は？",
+      "type": "singleSelect",
+      "required": false,
+      "options": [
+        {
+          "value": "Word（.docx）",
+          "label": "Word（.docx）"
+        },
+        {
+          "value": "PowerPoint（.pptx）",
+          "label": "PowerPoint（.pptx）"
+        },
+        {
+          "value": "PDF（.pdf）",
+          "label": "PDF（.pdf）"
+        },
+        {
+          "value": "Excel（.xlsx）",
+          "label": "Excel（.xlsx）"
+        },
+        {
+          "value": "複数の形式",
+          "label": "複数の形式"
+        }
+      ]
+    },
+    {
+      "id": "content",
+      "label": "資料に入れたい内容は？",
+      "type": "textarea",
+      "required": false,
+      "placeholder": "例：新商品の紹介資料。特徴、価格、利用例を入れたい。空欄でも大丈夫です。",
+      "maxLength": 6000
+    },
+    {
+      "id": "notes",
+      "label": "ほかに希望はありますか？",
+      "type": "textarea",
+      "required": false,
+      "placeholder": "例：落ち着いた青色、A4縦、5ページ程度。参考画像はAIとの会話で添付します。空欄でも大丈夫です。",
+      "maxLength": 6000
+    }
+  ],
+  "prompt": "上記の質問と回答を踏まえて、希望する資料を完成したファイルとして作成してください。作業を始める前に、参考にする画像がまだ提供されていない場合は画像の添付を最初に求めてください。画像を用意できない場合は、希望するレイアウトやデザインを簡潔に確認してください。ファイル形式が指定されていない場合は、Word、PowerPoint、PDF、Excelなどから希望する形式を最初に確認してください。両方の確認が必要なら一度に尋ねてください。参考画像が提供された場合は、構成、配置、配色、雰囲気を参考にし、内容に合わせて読みやすく仕上げてください。資料の目的に適した見出し、本文、表や図を必要に応じて整え、指定形式のファイルを提供してください。複数形式が希望された場合は必要な形式を確認してください。不明な事実は断定せず、資料作成に不可欠な情報だけを短く確認し、それ以外は自然な構成で仕上げてください。"
+}

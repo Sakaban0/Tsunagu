@@ -1,0 +1,103 @@
+{
+  "id": "pc-help",
+  "questions": [
+    {
+      "type": "singleSelect",
+      "id": "task",
+      "required": true,
+      "label": "何をしたいですか？",
+      "options": [
+        {
+          "label": "ファイルや写真を探す・開く",
+          "value": "ファイルや写真を探す・開く"
+        },
+        {
+          "label": "アプリを使う",
+          "value": "アプリを使う"
+        },
+        {
+          "label": "インターネットを使う",
+          "value": "インターネットを使う"
+        },
+        {
+          "label": "設定を変える",
+          "value": "設定を変える"
+        },
+        {
+          "label": "うまく動かない状態を直す",
+          "value": "うまく動かない状態を直す"
+        }
+      ]
+    },
+    {
+      "type": "singleSelect",
+      "id": "issue",
+      "required": true,
+      "label": "今、どこで困っていますか？",
+      "options": [
+        {
+          "label": "どこを押すか分からない",
+          "value": "どこを押すか分からない"
+        },
+        {
+          "label": "説明と画面が違う",
+          "value": "説明と画面が違う"
+        },
+        {
+          "label": "エラーが表示される",
+          "value": "エラーが表示される"
+        },
+        {
+          "label": "何から始めるか分からない",
+          "value": "何から始めるか分からない"
+        }
+      ]
+    },
+    {
+      "placeholder": "分かる部分だけで大丈夫です。",
+      "type": "textarea",
+      "visibleWhen": {
+        "questionId": "issue",
+        "value": "エラーが表示される",
+        "operator": "equals"
+      },
+      "id": "error",
+      "label": "エラーに書かれている言葉を教えてください",
+      "required": false
+    },
+    {
+      "type": "singleSelect",
+      "id": "pace",
+      "required": true,
+      "label": "どんな案内があると安心ですか？",
+      "options": [
+        {
+          "label": "押す場所を具体的に知りたい",
+          "value": "押す場所を具体的に知りたい"
+        },
+        {
+          "label": "1つずつ確認しながら進みたい",
+          "value": "1つずつ確認しながら進みたい"
+        },
+        {
+          "label": "全体の流れを先に知りたい",
+          "value": "全体の流れを先に知りたい"
+        }
+      ]
+    },
+    {
+      "placeholder": "例：今の画面の様子、伝えたい言葉、気になっていることなど。空欄でも大丈夫です。",
+      "type": "textarea",
+      "id": "extra",
+      "maxLength": 6000,
+      "label": "ほかに伝えたいことはありますか？",
+      "required": false
+    }
+  ],
+  "description": "ファイルやアプリの操作を、一歩ずつ。",
+  "category": "PC操作",
+  "origin": "bundled",
+  "prompt": "相談の質問と回答を踏まえて支援してください。スキップや「わからない」がある場合は、答えられる範囲から説明し、進めるために不可欠な点だけ短く確認してください。PC初心者向けに、専門用語は短く説明してください。一度に1〜2操作ずつ、クリック位置・アイコン・操作後の画面を具体的に案内し、画面の状態を確認してください。Windowsのバージョンによって操作が違う場合だけ確認してください。",
+  "name": "パソコンの操作を教えて",
+  "schemaVersion": 1
+}
