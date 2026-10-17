@@ -21,5 +21,4 @@ Codex_実装仕様書*.md
 /docs/*
 !/docs/TEMPLATE-GENERATION-PROMPT.md
 !/docs/USER-GUIDE.md
-**/ChatGptIntegration/
 scripts/update-bundled-templates.ps1
